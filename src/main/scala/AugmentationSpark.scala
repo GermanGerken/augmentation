@@ -5,7 +5,7 @@ import org.apache.spark.sql
 
 
 object AugmentationSpark {
-  def main(args: Array[String]) = {
+  def main(args: Array[String]): Unit = {
 
   val augment = (spark: SparkSession, inputDetailPath: String, outputPath: String,
               timeIgnorance: Int, breakPoint: Int) => {
@@ -51,8 +51,8 @@ object AugmentationSpark {
   }
 
 
-    // val spark = SparkSession.builder().appName("Data Augmentation").getOrCreate()
-    // augment(spark, "/Users/germangerken/Documents/test/test.csv", "/Users/germangerken/Documents/test/output", 5, 1800)
+    val spark = SparkSession.builder().appName("Data Augmentation").getOrCreate()
+    val exec = augment(spark, "/Users/germangerken/Documents/test/test.csv", "/Users/germangerken/Documents/test/output", 5, 1800)
 
   }
 }
