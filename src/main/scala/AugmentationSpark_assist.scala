@@ -1,6 +1,3 @@
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{DataFrame, SparkSession}
-
 object AugmentationSpark_assist {
 
   val timeOnPage = (x: Seq[Int], timeIgnorance: Int) => {
